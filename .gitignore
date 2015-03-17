@@ -54,4 +54,4 @@ public/css/bootstrap.min-old.css
 
 .idea/
 app/cache/
-app/config
+app/config/
