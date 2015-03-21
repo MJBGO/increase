@@ -211,7 +211,7 @@ class Message extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('id', 'Message', 'idFil', array('alias' => 'Message'));
+        $this->hasMany('id', 'Message', 'idFil', array('alias' => 'Messages'));
         $this->belongsTo('idFil', 'Message', 'id', array('alias' => 'Message'));
         $this->belongsTo('idProjet', 'Projet', 'id', array('alias' => 'Projet'));
         $this->belongsTo('idUser', 'User', 'id', array('alias' => 'User'));
