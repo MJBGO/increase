@@ -154,7 +154,7 @@ class Projet extends \Phalcon\Mvc\Model
      */
     public function getDatelancement()
     {
-        return $this->dateLancement;
+        return strtotime($this->dateLancement);
     }
 
     /**
@@ -164,7 +164,7 @@ class Projet extends \Phalcon\Mvc\Model
      */
     public function getDatefinprevue()
     {
-        return $this->dateFinPrevue;
+        return strtotime($this->dateFinPrevue);
     }
 
     /**

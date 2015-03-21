@@ -5,6 +5,11 @@ error_reporting(E_ALL);
 try {
 
     /**
+     * Read services
+     */
+    include __DIR__ . "/../app/config/routing.php";
+
+    /**
      * Read the configuration
      */
     $config = include __DIR__ . "/../app/config/config.php";

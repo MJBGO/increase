@@ -3,7 +3,7 @@
 return new \Phalcon\Config(array(
     'database' => array(
         'adapter'     => 'Mysql',
-        'host'        => '37.187.63.155',
+        'host'        => 'localhost',
         'username'    => 'increase',
         'password'    => 'increase',
         'dbname'      => 'increase',
