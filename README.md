@@ -9,20 +9,12 @@ A Phalcon web application to manage the progress of projects, and improve commun
 # Répartition des tâches
 
 ## Jean-Baptiste
+- ![done](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-24.png) 1- Models
+- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 3- Projet d'un client
+- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 5.1- Liste des tâches
+- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 6- Connexion/droits
 
-- [x] 1- Models (Jean-Baptiste)
-- [] 2- Liste des projets d'un client (Alexandre)
-- [] 3- Projet d'un client (Jean-Baptiste)
-- [] 4- Liste des projets d'un "Author" (Alexandre)
-- [] 5.1- Liste des tâches (Jean-Baptiste)
-- [] 5.2- Modification/ajout de tâche (Alexandre)
-- [] 6- Connexion/droits (Jean-Baptiste)
 ## Alexandre
-
-- [x] 1- Models (Jean-Baptiste)
-- [] 2- Liste des projets d'un client (Alexandre)
-- [] 3- Projet d'un client (Jean-Baptiste)
-- [] 4- Liste des projets d'un "Author" (Alexandre)
-- [] 5.1- Liste des tâches (Jean-Baptiste)
-- [] 5.2- Modification/ajout de tâche (Alexandre)
-- [] 6- Connexion/droits (Jean-Baptiste)
+- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 2- Liste des projets d'un client
+- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 4- Liste des projets d'un "Author"
+- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 5.2- Modification/ajout de tâche
