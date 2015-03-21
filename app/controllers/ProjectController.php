@@ -1,20 +1,41 @@
 <?php
 
-use \Phalcon\Http\Response;
+//use \Phalcon\Http\Response;
 
 class ProjectController extends ControllerBase
 {
 
-    public function equipeAction($id)
+    public function equipeAction($idProject)
     {
-        $usecase = Usecase::find("idProjet = " . $id);
+        $builder = new \Phalcon\Mvc\Model\Query\Builder();
 
-        $this->view->disable();
+        // Construction d'une requête qui récupère tout en un seul accès BDD
+        $usecases = $builder
+            ->columns(array('idDev, identite as name, SUM(poids) as weight'))
+            ->from('Usecase')
+            ->join('User')
+            ->where('idProjet = :id:', array('id' => $idProject))
+            ->groupBy(array('idDev'))
+            ->getQuery()
+            ->execute();
 
-        $response = new Response();
-        $response->setContent(json_encode($usecase));
+        // Calcul du poids total du projet
+        $totalWeight = 0;
+        foreach ($usecases as $usecase) {
+            $totalWeight += $usecase->weight;
+        }
 
-        return $response;
+        // Retourne la liste des développeurs sur le projet
+        $devList = array();
+        foreach ($usecases as $usecase) {
+            $devList[] = array(
+                'id' => $usecase->idDev,
+                'name' => $usecase->name,
+                'weight' => $usecase->weight / $totalWeight
+            );
+        }
+
+        return $this->response->setJsonContent($devList);
     }
 
 }

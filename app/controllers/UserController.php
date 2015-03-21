@@ -7,7 +7,11 @@ class UserController extends ControllerBase
     {
         $project = Projet::findFirst($id);
 
-        $this->view->setVar('project', $project);
+        if (!is_null($project)) {
+            $this->view->setVar('project', $project);
+        } else {
+            // show 404 error
+        }
     }
 
 }
