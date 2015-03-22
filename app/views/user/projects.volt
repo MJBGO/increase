@@ -18,9 +18,7 @@
                     {% elseif date('d-m-y', project.getDatefinprevue()) - date('d-m-y', time()) <= 0 %}
                         class="progress-bar progress-bar-danger"
                     {% endif %}
-
-
-                  role="progressbar" aria-valuenow="{{ avancement[project.getId()] }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: {{ avancement[project.getId()]}}%">
+                   role="progressbar" aria-valuenow="{{ avancement[project.getId()] }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: {{ avancement[project.getId()]}}%">
                     {{ avancement[project.getId()] }} %
                   </div>
                 </div>
@@ -29,7 +27,7 @@
                 {{ date('d-m-y', project.getDatefinprevue()) - date('d-m-y', time()) }} jour(s) restant(s)
             </div>
             <div class="col-md-1">
-                <button type="button" class="btn btn-primary">Ouvrir</button>
+                <a href="/user/project/{{ project.getId() }}"><button type="button" class="btn btn-primary">Ouvrir</button></a>
             </div>
             <br>
           </div>
