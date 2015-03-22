@@ -6,8 +6,8 @@
             <h1 class="panel-title">Mes Uses cases</h1>
         </div>
         <ul class="list-group" id="listUsecases">
-            <ul class="list-group usegroup maskUsecase" data-url="/increase/usecase/tasks/??">
-                <li class="list-group-item usecase">
+            <ul class="list-group usegroup maskUsecase">
+                <li class="list-group-item usecase" data-id="url" data-url="[[url]]">
                     <div class="row">
                         <div class="col-md-5">
                             <span class="usecase-name" data-id="name"></span>
@@ -15,8 +15,8 @@
                         </div>
                         <div class="col-md-5">
                             <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: %;">
-                                    <span data-id="progress"></span>%
+                                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-id="progress" style="width: [[progress]]%;">
+                                    [[progress]]%
                                 </div>
                             </div>
                         </div>

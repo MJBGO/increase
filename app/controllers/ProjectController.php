@@ -1,6 +1,6 @@
 <?php
 
-use \Phalcon\Mvc\Model\Query\Builder;
+use Phalcon\Mvc\Model\Query\Builder;
 
 class ProjectController extends ControllerBase
 {

@@ -1,10 +1,11 @@
+/* Permet de récupérer les tâches associées à un usecase. Je n'ai pas eu le temps de convertir avec la library */
 $(document).on('click', '#listUsecases .usecase', function() {
     $tasksDiv = $(this).parent().find('.listTasks');
     var isVisible = $tasksDiv.css('display') == 'block';
     if (isVisible) {
         $tasksDiv.hide();
     } else {
-        var url = $(this).parent().attr('data-url');
+        var url = $(this).attr('data-url');
 
         $.getJSON(url, function (data) {
             $tasksDiv.empty();
@@ -34,6 +35,7 @@ $(document).on('click', '#listUsecases .usecase', function() {
     }
 });
 
+/* Affiche les boutons Modifier et Supprimer lors d'un clic sur une tâche */
 $(document).on('click', '#listUsecases .task', function() {
     $('.task').removeClass('is-active');
     $('.btn-modify').show();

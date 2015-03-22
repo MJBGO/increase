@@ -15,7 +15,6 @@ use Phalcon\Acl\Adapter\Memory as AclList;
  */
 class SecurityPlugin extends Plugin
 {
-
     /**
      * Returns an existing or new access control list
      *
@@ -23,7 +22,6 @@ class SecurityPlugin extends Plugin
      */
     public function getAcl()
     {
-
         //throw new \Exception("something");
 
         if (!isset($this->persistent->acl)) {
@@ -42,25 +40,15 @@ class SecurityPlugin extends Plugin
                 $acl->addRole($role);
             }
 
-            //Private area resources
-            $privateResources = array(
-                'companies' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-                'products' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-                'producttypes' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete'),
-                'invoices' => array('index', 'profile')
-            );
-            foreach ($privateResources as $resource => $actions) {
-                $acl->addResource(new Resource($resource), $actions);
-            }
-
             $userResources = array(
-                'User' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete')
+                'user' => array('project', 'projects'),
+                'project' => array('equipe')
             );
             $authorResources = array(
-                'users' => array('index', 'search', 'new', 'edit', 'save', 'create', 'delete')
+                'user' => array('project')
             );
 
-            array_push($adminResources, $privateResources);
+            array_push($userResources, $authorResources);
 
             //Public area resources
             $publicResources = array(
@@ -82,15 +70,15 @@ class SecurityPlugin extends Plugin
             }
 
             //Grant acess to private area to role Users
-            foreach ($privateResources as $resource => $actions) {
+            foreach ($userResources as $resource => $actions) {
                 foreach ($actions as $action) {
                     $acl->allow('Users', $resource, $action);
                 }
             }
 
-            foreach ($adminResources as $resource => $actions) {
+            foreach ($authorResources as $resource => $actions) {
                 foreach ($actions as $action) {
-                    $acl->allow('Admins', $resource, $action);
+                    $acl->allow('Authors', $resource, $action);
                 }
             }
 
