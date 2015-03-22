@@ -1,0 +1,37 @@
+#divMessages {
+    display: none;
+}
+
+.msg {
+    margin: 15px;
+}
+
+.msg .msg-text {
+    margin: 10px 0;
+}
+
+.msg-children {
+    margin-left: 20px;
+}
+
+.msg .msg-user {
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.msg .msg-date {
+    font-size: 13px;
+}
+
+.bullet {
+    padding: 0 5px;
+    color: gray;
+}
+
+#btnAddMessage {
+    margin: 15px;
+}
+
+#btnCloseProject {
+    margin-top: 20px;
+}

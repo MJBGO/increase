@@ -54,7 +54,7 @@
     </div>
 
     <div class="btns">
-        <a id="btnMessages" class="btn btn-primary">{{ messages|length }} messages</a>
+        <a id="btnMessages" class="btn btn-primary">Montrer les {{ messages|length }} messages</a>
     </div>
 
     <div id="divMessages">
@@ -75,58 +75,11 @@
 
 {% block javascripts %}
     <script>
-        $(document).ready(function() {
-            $.getJSON('{{ url("project/equipe/" ~ project.getId()) }}', function(data) {
-                $.each(data, function(index, value) {
-                    $('#devEquipe').append('<li class="list-group-item"><strong>' + value.name + '</strong>' +
-                    ' (' + Math.round(value.weight * 100) + '%)</li>');
-                });
-            });
-        });
-
-        $(document).on('click', '#btnMessages', function() {
-            $('#btnMessages').hide();
-            $('#divMessages').show();
-        })
+        var teamUrl = "{{ url("project/equipe/" ~ project.getId()) }}";
     </script>
+    {{ javascript_include('js/project.js') }}
 {% endblock %}
 
-<style>
-    #divMessages {
-        display: none;
-    }
-
-    .msg {
-        margin: 15px;
-    }
-
-    .msg .msg-text {
-        margin: 10px 0;
-    }
-
-    .msg-children {
-        margin-left: 20px;
-    }
-
-    .msg .msg-user {
-        font-weight: 700;
-        font-size: 13px;
-    }
-
-    .msg .msg-date {
-        font-size: 13px;
-    }
-
-    .bullet {
-        padding: 0 5px;
-        color: gray;
-    }
-
-    #btnAddMessage {
-        margin: 15px;
-    }
-
-    #btnCloseProject {
-        margin-top: 20px;
-    }
-</style>
+{% block stylesheets %}
+    {{ stylesheet_link('css/project.css') }}
+{% endblock %}

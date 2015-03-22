@@ -182,12 +182,13 @@ class Usecase extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany('code', 'Tache', 'codeUseCase', array('alias' => 'Tache'));
-        $this->belongsTo('idProjet', 'Projet', 'id', array('alias' => 'Projet'));
+        $this->hasMany('code', 'Tache', 'codeUseCase', array('alias' => 'Tasks'));
+
+        /*$this->belongsTo('idProjet', 'Projet', 'id', array('alias' => 'Projet'));
         $this->belongsTo('idDev', 'User', 'id', array('alias' => 'User'));
         $this->hasMany('code', 'Tache', 'codeUseCase', NULL);
         $this->belongsTo('idProjet', 'Projet', 'id', NULL);
-        $this->belongsTo('idDev', 'User', 'id', NULL);
+        $this->belongsTo('idDev', 'User', 'id', NULL);*/
     }
 
 }
