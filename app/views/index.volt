@@ -8,8 +8,6 @@
     {{ javascript_include('js/jquery.min.js') }}
     {{ javascript_include('js/bootstrap.min.js') }}
     {{ javascript_include('js/utils.js') }}
-
-    {% block javascripts %}{% endblock %}
 </head>
 <body>
 <div class="bs-docs-header">
