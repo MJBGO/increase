@@ -33,8 +33,10 @@ class UserController extends ControllerBase
 
         $timestatus = array();
         foreach ($projectList as $project){
-            $timestatus[$project->id] = ($project->Datelancement - date("d-m-Y"))/($project->Datelancement - $project->Datefinprevue)*100;
+            $timestatus[$project->getId()] = (date("d-m-Y", time()) - date("d-m-Y",$project->getDatelancement()))/(date("d-m-Y",$project->getDatefinprevue()) - date("d-m-Y",$project->getDatelancement()))*100;
         }
+
+
 
         $avancementList = array();
         foreach ($avancements as $avancement) {
