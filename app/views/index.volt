@@ -4,8 +4,10 @@
     <title>Increase</title>
     {{ stylesheet_link("css/bootstrap.min.css") }}
     {{ stylesheet_link("css/styles.css") }}
+
     {{ javascript_include('js/jquery.min.js') }}
     {{ javascript_include('js/bootstrap.min.js') }}
+    {{ javascript_include('js/utils.js') }}
 
     {% block javascripts %}{% endblock %}
 </head>

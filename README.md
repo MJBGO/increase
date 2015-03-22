@@ -15,3 +15,8 @@ A Phalcon web application to manage the progress of projects, and improve commun
 - ![done](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-24.png) 2- Liste des projets d'un client
 - ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 4- Liste des projets d'un "Author"
 - ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 5.2- Modification/ajout de tâche
+
+# Parties bonus ajoutées
+
+- Formulaire de connexion à l'application
+- ...
