@@ -17,7 +17,7 @@ class UserController extends ControllerBase
             // show 404 error
         }
 
-        $this->jquery->jsonArray("#maskTeam", "project/equipe/" . $projectId);
+        $this->jquery->jsonArray(".maskTeam", "project/equipe/" . $projectId);
         $this->jquery->compile($this->view);
     }
 

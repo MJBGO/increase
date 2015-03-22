@@ -6,7 +6,7 @@
             <h1 class="panel-title">Équipe</h1>
         </div>
         <ul class="list-group" id="devEquipe">
-            <li id="maskTeam" class="list-group-item">
+            <li class="list-group-item maskTeam">
                 <strong data-id="name"></strong>
                 (<span data-id="weight"></span>)
             </li>

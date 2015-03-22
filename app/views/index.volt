@@ -5,11 +5,13 @@
     {{ stylesheet_link("css/bootstrap.min.css") }}
     {{ stylesheet_link("css/styles.css") }}
     {{ stylesheet_link('css/project.css') }}
+    {{ stylesheet_link('css/author.css') }}
 
     {{ javascript_include('js/jquery.min.js') }}
     {{ javascript_include('js/bootstrap.min.js') }}
     {{ javascript_include('js/utils.js') }}
     {{ javascript_include('js/project.js') }}
+    {{ javascript_include('js/author.js') }}
 </head>
 <body>
 <div class="bs-docs-header">
