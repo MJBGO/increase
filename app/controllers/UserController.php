@@ -10,7 +10,7 @@ class UserController extends ControllerBase
 
         if (!is_null($project)) {
             $this->view->setVar('project', $project);
-            $this->view->setVar('messages', $messages);
+            $this->view->setVar('nbMessages', count($messages));
         } else {
             // show 404 error
         }
