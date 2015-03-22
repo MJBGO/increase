@@ -68,10 +68,4 @@
     <a href="#" id="btnCloseProject" class="btn btn-primary">Fermer le projet</a>
 </div>
 
-{% block javascripts %}
-    {{ javascript_include('js/project.js') }}
-{% endblock %}
-
-{% block stylesheets %}
-    {{ stylesheet_link('css/project.css') }}
-{% endblock %}
+{{script_foot}}

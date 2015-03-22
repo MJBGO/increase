@@ -1,6 +1,6 @@
 <?php
 
-//use \Phalcon\Http\Response;
+use \Phalcon\Mvc\Model\Query\Builder;
 
 class ProjectController extends ControllerBase
 {
@@ -13,7 +13,7 @@ class ProjectController extends ControllerBase
      */
     public function equipeAction($projectId)
     {
-        $builder = new \Phalcon\Mvc\Model\Query\Builder();
+        $builder = new Builder();
 
         // Construction d'une requête qui récupère tout en un seul accès BDD
         $usecases = $builder
@@ -37,7 +37,7 @@ class ProjectController extends ControllerBase
             $devList[] = array(
                 'id' => $usecase->idDev,
                 'name' => $usecase->name,
-                'weight' => $usecase->weight / $totalWeight
+                'weight' => ceil(($usecase->weight / $totalWeight) * 100)
             );
         }
 
@@ -53,7 +53,7 @@ class ProjectController extends ControllerBase
      */
     function authorAction($projectId, $authorId)
     {
-        $builder = new \Phalcon\Mvc\Model\Query\Builder();
+        $builder = new Builder();
 
         // Construction d'une requête qui récupère et calcule tous les usercases en un seul accès BDD
         $usecases = $builder
@@ -72,8 +72,9 @@ class ProjectController extends ControllerBase
                 "code"     => $usecase->code,
                 "name"     => $usecase->name,
                 "weight"   => (int) $usecase->weight,
-                "nbTasks" => (int) $usecase->nbTasks,
+                "nbTasks"  => (int) $usecase->nbTasks,
                 "progress" => ceil($usecase->progress),
+                "url"      => $this->url->get("usecase/tasks/" . $usecase->code)
             );
         }
 

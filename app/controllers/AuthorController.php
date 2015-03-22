@@ -15,6 +15,9 @@ class AuthorController extends ControllerBase
         } else {
             // show 404 error
         }
+
+        $this->jquery->jsonArray(".maskUsecase", "project/author/" . $projectId . "/" . $authorId);
+        $this->jquery->compile($this->view);
     }
 
     public function projectsAction($idAuthor){

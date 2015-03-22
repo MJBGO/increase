@@ -1,5 +1,7 @@
 <?php
 
+use \Phalcon\Mvc\Model\Query\Builder;
+
 class UserController extends ControllerBase
 {
 
@@ -14,11 +16,14 @@ class UserController extends ControllerBase
         } else {
             // show 404 error
         }
+
+        $this->jquery->jsonArray(".maskTeam", "project/equipe/" . $projectId);
+        $this->jquery->compile($this->view);
     }
 
-    public function projectsAction($idUser){
-
-        $builder = new \Phalcon\Mvc\Model\Query\Builder();
+    public function projectsAction($idUser)
+    {
+        $builder = new Builder();
 
         $projectList = Projet::find('idClient='.$idUser);
         $client = User::findFirst($idUser);
@@ -30,22 +35,15 @@ class UserController extends ControllerBase
             ->getQuery()
             ->execute();
 
-
         $timestatus = array();
         foreach ($projectList as $project){
             $timestatus[$project->getId()] = (date("d-m-Y", time()) - date("d-m-Y",$project->getDatelancement()))/(date("d-m-Y",$project->getDatefinprevue()) - date("d-m-Y",$project->getDatelancement()))*100;
         }
 
-
-
         $avancementList = array();
         foreach ($avancements as $avancement) {
             $avancementList[$avancement->idProjet] = $avancement->pourcentage;
-
         }
-
-
-
 
         if (!is_null($projectList)){
             $this->view->setVar('projects', $projectList);
