@@ -5,6 +5,11 @@
     <br>
     <div id='projectsList'>
 
+        {% if projects | length == 0 %}
+            <div class="alert alert-warning" role="alert"> Aucun projet disponible </div>
+        {% endif %}
+
+
         {% for project in projects %}
           <div class="row">
             <div class="col-md-2"> {{ project.getNom() }} </div>
