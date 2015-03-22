@@ -30,16 +30,26 @@ class UserController extends ControllerBase
             ->getQuery()
             ->execute();
 
+
+        $timestatus = array();
+        foreach ($projectList as $project){
+            $timestatus[$project->id] = ($project->Datelancement - date("d-m-Y"))/($project->Datelancement - $project->Datefinprevue)*100;
+        }
+
         $avancementList = array();
         foreach ($avancements as $avancement) {
             $avancementList[$avancement->idProjet] = $avancement->pourcentage;
+
         }
+
+
 
 
         if (!is_null($projectList)){
             $this->view->setVar('projects', $projectList);
             $this->view->setVar('client', $client);
             $this->view->setVar('avancement', $avancementList);
+            $this->view->setVar('time',$timestatus);
 
         }
 

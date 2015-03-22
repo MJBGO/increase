@@ -11,19 +11,16 @@
             <div class="col-md-7">
                 <div class="progress">
                   <div
-                    {#
-                    {% if (((date('d-m-y', project.getDatefinprevue()) - date('d-m-y', time())/date('d-m-y', project.getDatefinprevue()) - date('d-m-y', project.getDatelancement())*100) <= avancement[project.getId()]) %}
+                    {% if avancement[project.getId()] >= time[project.getId()] %}
                         class="progress-bar progress-bar-success"
-                    {% elseif (((date('d-m-y', project.getDatefinprevue()) - date('d-m-y', time())/date('d-m-y', project.getDatefinprevue()) - date('d-m-y', project.getDatelancement())*100) >= avancement[project.getId()]) %}
+                    {% elseif avancement[project.getId()] <= time[project.getId()] %}
                         class="progress-bar progress-bar-warning"
-                    {% else %}
+                    {% elseif date('d-m-y', project.getDatefinprevue()) - date('d-m-y', time()) <= 0 %}
                         class="progress-bar progress-bar-danger"
                     {% endif %}
 
-                    #}
 
-                  class="progress-bar progress-bar-success"
-                  role="progressbar" aria-valuenow="{{ avancement[project.getId()] }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: {{ avancement[project.getId()]}}%">
+                  role="progressbar" aria-valuenow="{{ avancement[project.getId()] }}" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: {{ avancement[project.getId()]}}%">
                     {{ avancement[project.getId()] }} %
                   </div>
                 </div>
