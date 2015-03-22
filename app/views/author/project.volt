@@ -48,9 +48,9 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h1 class="panel-title">Équipe</h1>
+            <h1 class="panel-title">Mes Uses cases</h1>
         </div>
-        <ul class="list-group" id="devEquipe"></ul>
+        <ul class="list-group" id="listUsecases"></ul>
     </div>
 
     <div class="btns">
@@ -75,12 +75,14 @@
 
 {% block javascripts %}
     <script>
-        var teamUrl = "{{ url("project/equipe/" ~ project.getId()) }}";
+        var usecasesUrl = "{{ url("project/author/" ~ project.getId() ~ "/" ~ authorId) }}";
+        var tasksUrl = "{{ url("usecase/tasks/") }}";
     </script>
     {{ javascript_include('js/project.js') }}
-    {{ javascript_include('js/user.js') }}
+    {{ javascript_include('js/author.js') }}
 {% endblock %}
 
 {% block stylesheets %}
     {{ stylesheet_link('css/project.css') }}
+    {{ stylesheet_link('css/author.css') }}
 {% endblock %}

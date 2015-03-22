@@ -1,0 +1,31 @@
+#listUsecases .list-group-item:hover {
+    cursor: pointer;
+}
+
+#listUsecases .listTasks {
+    display: none;
+}
+
+#listUsecases .usecase .row {
+    height: 20px;
+}
+
+#listUsecases .usegroup, #listUsecases .listTasks {
+    margin-bottom: 3px;
+}
+
+#listUsecases {
+    margin-bottom: -3px;
+}
+
+.buttons a {
+    margin-right: 5px;
+}
+
+.btn-modify, .btn-delete {
+    display: none;
+}
+
+.is-active {
+    background-color: rgb(255, 249, 134);
+}
