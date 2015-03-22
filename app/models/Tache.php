@@ -125,7 +125,7 @@ class Tache extends \Phalcon\Mvc\Model
      */
     public function getDate()
     {
-        return $this->date;
+        return strtotime($this->date);
     }
 
     /**

@@ -57,7 +57,7 @@ class ProjectController extends ControllerBase
 
         // Construction d'une requête qui récupère et calcule tous les usercases en un seul accès BDD
         $usecases = $builder
-            ->columns(array('code, nom as name, poids as weight, COUNT(*) as nbTasks, (SUM(Tache.avancement) / COUNT(*)) as progress'))
+            ->columns(array('code, nom as name, poids as weight, COUNT(Tache.id) as nbTasks, (SUM(Tache.avancement) / COUNT(Tache.id)) as progress'))
             ->from('Usecase')
             ->leftJoin('Tache')
             ->where('idDev = :devId:', array('devId' => $authorId))
@@ -72,7 +72,7 @@ class ProjectController extends ControllerBase
                 "code"     => $usecase->code,
                 "name"     => $usecase->name,
                 "weight"   => (int) $usecase->weight,
-                "nbTasks" => $usecase->nbTasks,
+                "nbTasks" => (int) $usecase->nbTasks,
                 "progress" => ceil($usecase->progress),
             );
         }
