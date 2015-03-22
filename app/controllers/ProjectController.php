@@ -37,7 +37,7 @@ class ProjectController extends ControllerBase
             $devList[] = array(
                 'id' => $usecase->idDev,
                 'name' => $usecase->name,
-                'weight' => $usecase->weight / $totalWeight
+                'weight' => ceil(($usecase->weight / $totalWeight) * 100)
             );
         }
 

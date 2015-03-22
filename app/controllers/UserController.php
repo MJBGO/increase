@@ -10,15 +10,15 @@ class UserController extends ControllerBase
         $project = Projet::findFirst($projectId);
         $messages = $project->getAllMessages();
 
-        $this->jquery->json("project/equipe");
-        echo $this->jquery->compile();
-
         if (!is_null($project)) {
             $this->view->setVar('project', $project);
             $this->view->setVar('messages', $messages);
         } else {
             // show 404 error
         }
+
+        $this->jquery->jsonArray("#maskTeam", "project/equipe/" . $projectId);
+        $this->jquery->compile($this->view);
     }
 
     public function projectsAction($idUser)

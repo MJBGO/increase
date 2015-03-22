@@ -4,10 +4,12 @@
     <title>Increase</title>
     {{ stylesheet_link("css/bootstrap.min.css") }}
     {{ stylesheet_link("css/styles.css") }}
+    {{ stylesheet_link('css/project.css') }}
 
     {{ javascript_include('js/jquery.min.js') }}
     {{ javascript_include('js/bootstrap.min.js') }}
     {{ javascript_include('js/utils.js') }}
+    {{ javascript_include('js/project.js') }}
 </head>
 <body>
 <div class="bs-docs-header">
