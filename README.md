@@ -49,3 +49,37 @@ Accès à un projet d'un utilisateur : /user/project/1/1
 Accès à la liste des projets d'un auteur : /author/projects/2
 
 Accès à un projet d'un auteur : /author/project/1/2
+
+# Capture d'écran
+
+Page de connexion (affichage)
+
+![connexion](http://img11.hostingpics.net/pics/305589Capture1.png)
+
+Liste des projets de l'utilisateur
+
+![projetsuser](http://img11.hostingpics.net/pics/537715Capture2.png)
+
+Aperçu d'un projet d'un utilisateur
+
+![projetuser](http://img11.hostingpics.net/pics/126968Capture3.png)
+
+Affichage des messages (AJAX)
+
+![messages](http://img11.hostingpics.net/pics/167136Capture4.png)
+
+Lorsque le projet n'existe pas
+
+![noproject](http://img11.hostingpics.net/pics/201613Capture5.png)
+
+Liste des projets de l'auteur
+
+![projetsauthor](http://img11.hostingpics.net/pics/437227Capture6.png)
+
+Aperçu d'un projet par un auteur
+
+![projetauthor](http://img11.hostingpics.net/pics/854604Capture7.png)
+
+Affichage des usecases (AJAX)
+
+![usercases](http://img11.hostingpics.net/pics/526467Capture8.png)
