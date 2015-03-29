@@ -9,7 +9,7 @@ A Phalcon web application to manage the progress of projects, and improve commun
 - ![done](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-24.png) 3- Projet d'un client
 - ![done](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-24.png) 5.0- Projet client vu par un author
 - ![done](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-24.png) 5.1- Liste des tâches
-- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 6- Connexion/droits
+- ![todo](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/17-24.png) 6- Connexion/droits (configuré mais page blanche)
 
 ## Alexandre
 - ![done](https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/11-24.png) 2- Liste des projets d'un client
