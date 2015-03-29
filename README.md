@@ -32,6 +32,9 @@ Les requêtes AJAX utilise la bibliothèque Phalcon-JQuery.
 # Liens
 
 Accès à la liste des projets de l'utilisateur : /user/projects/1
+
 Accès à un projet d'un utilisateur : /user/project/1/1
+
 Accès à la liste des projets d'un auteur : /author/projects/1
+
 Accès à un projet d'un auteur : /author/project/1/1
