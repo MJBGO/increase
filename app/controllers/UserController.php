@@ -5,6 +5,11 @@ use \Phalcon\Mvc\Model\Query\Builder;
 class UserController extends ControllerBase
 {
 
+    /**
+     * Récupère les données du projet
+     *
+     * @param $projectId int Identifiant du projet
+     */
     public function projectAction($projectId)
     {
         $project = Projet::findFirst($projectId);
@@ -21,13 +26,16 @@ class UserController extends ControllerBase
         $this->jquery->compile($this->view);
     }
 
+    /**
+     * Récupère tous les projets du client
+     *
+     * @param $projectId int Identifiant du client
+     */
     public function projectsAction($idUser)
     {
         $builder = new Builder();
-
         $projectList = Projet::find('idClient='.$idUser);
         $client = User::findFirst($idUser);
-
         $avancements = $builder
             ->columns(array('idProjet,SUM(avancement*poids)/100 as pourcentage'))
             ->from('Usecase')
@@ -42,18 +50,15 @@ class UserController extends ControllerBase
 
         $avancementList = array();
         foreach ($avancements as $avancement) {
-            $avancementList[$avancement->idProjet] = $avancement->pourcentage;
+            $avancementList[$avancement->idProjet] = ceil($avancement->pourcentage);
         }
 
         if (!is_null($projectList)){
             $this->view->setVar('projects', $projectList);
             $this->view->setVar('client', $client);
             $this->view->setVar('avancement', $avancementList);
-            $this->view->setVar('time',$timestatus);
-
+            $this->view->setVar('time', $timestatus);
         }
-
-
     }
 }
 

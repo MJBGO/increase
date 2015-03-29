@@ -29,10 +29,10 @@
                 </div>
             </div>
             <div class="col-md-2">
-                {{ date('d-m-Y', project.fin) }} jour(s) restant(s)
+                {{ time[project.id] }} jour(s) restant(s)
             </div>
             <div class="col-md-1">
-                <a href="/user/project/{{ project.id }}"><button type="button" class="btn btn-primary">Ouvrir</button></a>
+                <a href="{{ url("author/project/" ~ project.id ~ "/" ~ author.getId()) }}"><button type="button" class="btn btn-primary">Ouvrir</button></a>
             </div>
             <br>
           </div>

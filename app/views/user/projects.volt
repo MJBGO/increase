@@ -32,7 +32,7 @@
                 {{ date('d-m-y', project.getDatefinprevue()) - date('d-m-y', time()) }} jour(s) restant(s)
             </div>
             <div class="col-md-1">
-                <a href="/user/project/{{ project.getId() }}"><button type="button" class="btn btn-primary">Ouvrir</button></a>
+                <a href="{{ url("user/project/" ~ project.getId()) }}"><button type="button" class="btn btn-primary">Ouvrir</button></a>
             </div>
             <br>
           </div>

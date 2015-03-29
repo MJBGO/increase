@@ -54,7 +54,7 @@ class SecurityPlugin extends Plugin
             $publicResources = array(
                 'index' => array('index'),
                 'errors' => array('show404', 'show500', 'show401'),
-                'session' => array('index', 'register', 'start', 'end'),
+                'session' => array('index', 'register', 'start', 'end')
             );
             foreach ($publicResources as $resource => $actions) {
                 $acl->addResource(new Resource($resource), $actions);

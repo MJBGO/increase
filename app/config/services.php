@@ -21,25 +21,25 @@ $di = new FactoryDefault();
 /**
  * We register the events manager
  */
-$di->set('dispatcher', function() use ($di) {
-
-    $eventsManager = new EventsManager;
-
-    /**
-     * Check if the user is allowed to access certain action using the SecurityPlugin
-     */
-    $eventsManager->attach('dispatch:beforeDispatch', new SecurityPlugin);
-
-    /**
-     * Handle exceptions and not-found exceptions using NotFoundPlugin
-     */
-    $eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
-
-    $dispatcher = new Dispatcher;
-    $dispatcher->setEventsManager($eventsManager);
-
-    return $dispatcher;
-});
+//$di->set('dispatcher', function() use ($di) {
+//
+//    $eventsManager = new EventsManager;
+//
+//    /**
+//     * Check if the user is allowed to access certain action using the SecurityPlugin
+//     */
+//    $eventsManager->attach('dispatch:beforeDispatch', new SecurityPlugin);
+//
+//    /**
+//     * Handle exceptions and not-found exceptions using NotFoundPlugin
+//     */
+//    $eventsManager->attach('dispatch:beforeException', new NotFoundPlugin);
+//
+//    $dispatcher = new Dispatcher;
+//    $dispatcher->setEventsManager($eventsManager);
+//
+//    return $dispatcher;
+//});
 
 /**
  * The URL component is used to generate all kind of urls in the application
