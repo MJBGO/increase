@@ -65,7 +65,6 @@
             <a href="#" id="btnAddMessage" class="btn btn-primary">Nouveau message</a>
         </div>
     </div>
-    <a href="#" id="btnCloseProject" class="btn btn-primary">Fermer le projet</a>
 </div>
 
 {{script_foot}}
