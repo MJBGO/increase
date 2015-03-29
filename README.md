@@ -2,6 +2,17 @@
 # increase
 A Phalcon web application to manage the progress of projects, and improve communication with the customer
 
+# Installation
+
+Ne pas oublier de modifier le baseUri dans le fichier config.php
+
+```php
+'application' => array(
+  [...]
+  'baseUri'        => '/increase/',
+)
+```
+
 # Répartition des tâches
 
 ## Jean-Baptiste
